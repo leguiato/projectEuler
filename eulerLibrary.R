@@ -9,10 +9,12 @@ isMultiple <- function(number, multiple){
   }
 }
 
+#determines if num is a multiple of 3
 isMultiple3 <- function(num){
   isMultiple(num, 3)
 }
 
+#determines if num is a multiple of 5
 isMultiple5 <- function(num){
   isMultiple(num, 5)
 }
@@ -25,3 +27,16 @@ findMultiples <- function(number)
   apply(lis, 0, isMultiple)
 }
 
+#should return vector with the first num fibonacci numbers
+fibonacci<- function(num){
+  fibSeq = c(1,1)
+  ultimateFib = 1
+  penultimateFib = 1
+  for(n in 2:num){
+    newFib = ultimateFib+penultimateFib
+    fibSeq <- union(fibSeq, newFib)
+    penultimateFib = ultimateFib
+    ultimateFib = newFib
+  }
+  fibSeq
+}
